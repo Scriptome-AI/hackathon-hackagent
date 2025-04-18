@@ -1090,8 +1090,11 @@ scheduleReminder('C08LJBTA412', '⏰ 15 minutes until coding stops! Start wrappi
 
 // Start the app
 (async () => {
-  await app.start(process.env.PORT || 3000);
-  console.log('⚡️ HackAgent is running at https://scriptome.ai/hackathon-hackagent');
+  // For local development only
+  if (process.env.NODE_ENV !== 'production') {
+    await app.start(process.env.PORT || 3000);
+    console.log('⚡️ HackAgent is running locally');
+  }
 })();
 
 // Export the Express app for Vercel
