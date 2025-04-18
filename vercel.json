@@ -4,6 +4,12 @@
     { "src": "app.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "app.js" }
+    { "src": "/(.*)", "dest": "app.js" }  
+  ]
+  "rewrites": [
+    {
+      "source": "/hackathon-hackagent/:path*",
+      "destination": "https://your-hackathon-project.vercel.app/hackathon-hackagent/:path*"
+    }
   ]
 }
