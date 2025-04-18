@@ -6,10 +6,4 @@
   "routes": [
     { "src": "/(.*)", "dest": "app.js" }  
   ],
-  "rewrites": [
-    {
-      "source": "/hackathon-hackagent/:path*",
-      "destination": "https://scriptome.ai/hackathon-hackagent/:path*"
-    }
-  ]
 }
