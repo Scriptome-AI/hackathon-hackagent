@@ -11,6 +11,11 @@ const receiver = new ExpressReceiver({
   processBeforeResponse: true
 });
 
+// Add a root route handler
+receiver.app.get('/', (req, res) => {
+  res.send('HackAgent is running! Visit /hackathon-hackagent for the main application.');
+});
+
 // Initialize app with the receiver
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
